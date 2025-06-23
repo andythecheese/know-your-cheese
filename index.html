@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheese Quiz!</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .question { margin: 20px 0; }
+    button { margin: 5px; padding: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>🧀 Cheese Quiz: Round 1</h1>
+  <img id="cheese-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mimolette.jpg/800px-Mimolette.jpg" alt="Cheese image" width="300">
+
+  <div class="question" id="question-text">What is the texture of this cheese?</div>
+
+  <div id="choices">
+    <button onclick="checkAnswer('Soft')">Soft</button>
+    <button onclick="checkAnswer('Crumbly')">Crumbly</button>
+    <button onclick="checkAnswer('Hard')">Hard</button>
+    <button onclick="checkAnswer('Hard-cooked')">Hard-cooked</button>
+  </div>
+
+  <div id="feedback"></div>
+
+</body>
+<script src="quiz.js"></script>
+</html>
