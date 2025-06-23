@@ -1,14 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Cheese Quiz!</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    .question { margin: 20px 0; }
-    button { margin: 5px; padding: 10px; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .question {
+      margin: 20px 0;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px;
+    }
+
+    #cheese-img {
+      width: 300px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes cheeseDance {
+      0% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(10deg) scale(1.1); }
+      50% { transform: rotate(-10deg) scale(1.1); }
+      75% { transform: rotate(10deg) scale(1.05); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    .cheese-dance {
+      animation: cheeseDance 0.8s ease;
+    }
+
+    .correct {
+      background-color: #c8f7c5;
+    }
+
+    .wrong {
+      background-color: #f7c5c5;
+    }
   </style>
 </head>
+
 <body>
 
   <h1>🧀 Cheese Quiz: Round 1</h1>
