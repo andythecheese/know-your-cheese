@@ -1,0 +1,26 @@
+[
+  {
+    "question": "Where does this cheese originate from?",
+    "options": ["France", "Italy", "Switzerland", "Netherlands"],
+    "answer": 0,
+    "fact": "Correct! This cheese hails from the northern French city of Lille."
+  },
+  {
+    "question": "What type of milk is used to make this cheese?",
+    "options": ["Cow's milk", "Goat's milk", "Sheep's milk", "Buffalo's milk"],
+    "answer": 0,
+    "fact": "Correct! It's made from cow's milk, giving it a rich base for aging."
+  },
+  {
+    "question": "What is this cheese often nicknamed?",
+    "options": ["The Cannonball", "The Orange Delight", "The Cheese of Kings", "The Golden Globe"],
+    "answer": 0,
+    "fact": "Correct! Its round, craggy shape earned it the nickname 'The Cannonball.'"
+  },
+  {
+    "question": "What is the name of this cheese?",
+    "options": ["Mimolette", "Brie de Meaux", "Tomme de Savoie", "Reblochon"],
+    "answer": 0,
+    "fact": "🎉 Correct! The cheese is... Mimolette!"
+  }
+]
