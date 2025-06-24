@@ -49,12 +49,12 @@ function checkAnswer(userIndex) {
 
   if (isCorrect) {
     feedback.innerHTML = current.fact || "✅ Correct!";
-    correctSound.play();
+    correctSound.play().catch(() => {});
     cheeseImg.classList.add("cheese-dance");
     setTimeout(() => cheeseImg.classList.remove("cheese-dance"), 800);
   } else {
     feedback.innerHTML = "❌ Not quite!";
-    wrongSound.play();
+    wrongSound.play().catch(() => {});
   }
 
   setTimeout(() => {
