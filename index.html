@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheese Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .question {
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .cheese-dance {
+      animation: wiggle 0.8s ease;
+    }
+    @keyframes wiggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧀 Cheese Quiz</h1>
+  <img id="cheese-img" alt="Cheese image" width="300">
+
+  <div class="question" id="question">Loading quiz...</div>
+
+  <div id="buttons"></div>
+
+  <div id="feedback"></div>
+
+  <audio id="correct-sound" src="correct.mp3"></audio>
+  <audio id="wrong-sound" src="wrong.mp3"></audio>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
+

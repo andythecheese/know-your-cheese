@@ -1,0 +1,46 @@
+{
+  "image": "mimolette.png",
+  "questions": [
+    {
+      "question": "Which country does Mimolette originate from?",
+      "options": ["France", "Netherlands", "Switzerland", "Italy"],
+      "answer": 0
+    },
+    {
+      "question": "What gives Mimolette its distinctive orange color?",
+      "options": ["Annatto", "Carrot juice", "Saffron", "Paprika"],
+      "answer": 0
+    },
+    {
+      "question": "What is the 'Make class' (texture classification) of Mimolette?",
+      "options": ["Soft", "Crumbly", "Hard", "Hard Cooked"],
+      "answer": 2
+    },
+    {
+      "question": "What insect is famously associated with aging traditional Mimolette?",
+      "options": ["Cheese mites", "Fruit flies", "Beetle larvae", "Wax moths"],
+      "answer": 0
+    },
+    {
+      "question": "How long is extra-old Mimolette typically aged?",
+      "options": ["6 months", "12 months", "18–24 months", "Over 3 years"],
+      "answer": 2
+    },
+    {
+      "question": "Which cheese is Mimolette traditionally inspired by?",
+      "options": ["Cheddar", "Edam", "Gouda", "Comté"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following best describes Mimolette's flavour profile as it ages?",
+      "options": [
+        "Mild and milky",
+        "Tangy and citrusy",
+        "Nutty and caramel-like",
+        "Sweet and creamy"
+      ],
+      "answer": 2
+    }
+  ]
+}
+
