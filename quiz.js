@@ -5,8 +5,14 @@ function loadQuiz(filename) {
   fetch(filename)
     .then(response => response.json())
     .then(data => {
-      questions = data;
+      questions = data.questions;
       currentQuestionIndex = 0;
+
+      const cheeseImg = document.getElementById("cheese-img");
+      if (data.image) {
+        cheeseImg.src = data.image;
+      }
+
       loadQuestion();
     })
     .catch(error => {
@@ -61,7 +67,7 @@ function checkAnswer(userIndex) {
   }, 2000);
 }
 
-// Start the quiz when the page loads
+// Start the quiz with Mimolette by default
 window.onload = () => {
   loadQuiz("mimolette.json");
 };
