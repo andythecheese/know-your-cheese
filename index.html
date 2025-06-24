@@ -1,51 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cheese Quiz</title>
+  <meta charset="UTF-8" />
+  <title>Know Your Cheese – Quiz Setup</title>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
       margin-top: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .question {
-      margin: 20px 0;
-      font-size: 1.2em;
+    h1 {
+      font-size: 2em;
     }
-    button {
-      margin: 5px;
-      padding: 10px 20px;
+    select, button {
+      margin: 10px;
+      padding: 10px;
       font-size: 1em;
-      cursor: pointer;
     }
-    .cheese-dance {
-      animation: wiggle 0.8s ease;
+    .cheese-options {
+      text-align: left;
+      margin-top: 20px;
     }
-    @keyframes wiggle {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      50% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
-      100% { transform: rotate(0deg); }
+    .cheese-options label {
+      display: block;
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
+  <img src="cheese_quiz.png" alt="Cheese Quiz Logo" width="250"
+       style="background-color: white; border-radius: 12px;" />
 
-  <h1>🧀 Cheese Quiz</h1>
-  <img id="cheese-img" alt="Cheese image" width="300">
+  <h1>🧀 Welcome to Know Your Cheese</h1>
+  <p>How many cheeses would you like to be quizzed on?</p>
+  <select id="cheese-count"></select>
 
-  <div class="question" id="question">Loading quiz...</div>
+  <p>Select specific cheeses (or leave blank for random):</p>
+  <div class="cheese-options" id="cheese-list"></div>
 
-  <div id="buttons"></div>
+  <button onclick="startQuiz()">Start Quiz</button>
 
-  <div id="feedback"></div>
+  <script>
+    let availableCheeses = [];
 
-  <audio id="correct-sound" src="correct.mp3"></audio>
-  <audio id="wrong-sound" src="wrong.mp3"></audio>
+    fetch("cheese_list.json")
+      .then(res => res.json())
+      .then(data => {
+        availableCheeses = data.cheeses;
+        const countSelect = document.getElementById("cheese-count");
+        for (let i = 1; i <= availableCheeses.length; i++) {
+          const opt = document.createElement("option");
+          opt.value = i;
+          opt.innerText = i;
+          countSelect.appendChild(opt);
+        }
 
-  <script src="quiz.js"></script>
+        const cheeseListDiv = document.getElementById("cheese-list");
+        availableCheeses.forEach((cheese) => {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.value = cheese.file;
+          label.appendChild(input);
+          label.append(" " + cheese.title);
+          cheeseListDiv.appendChild(label);
+        });
+      });
+
+    function startQuiz() {
+      const selectedCount = parseInt(document.getElementById("cheese-count").value);
+      const checked = Array.from(document.querySelectorAll("#cheese-list input:checked"))
+                           .map(cb => cb.value);
+
+      let chosen = [];
+
+      if (checked.length > 0) {
+        chosen = checked.slice(0, selectedCount);
+        if (chosen.length < selectedCount) {
+          const remaining = availableCheeses
+            .map(c => c.file)
+            .filter(f => !chosen.includes(f));
+          while (chosen.length < selectedCount && remaining.length > 0) {
+            const index = Math.floor(Math.random() * remaining.length);
+            chosen.push(remaining.splice(index, 1)[0]);
+          }
+        }
+      } else {
+        const shuffled = [...availableCheeses].sort(() => 0.5 - Math.random());
+        chosen = shuffled.slice(0, selectedCount).map(c => c.file);
+      }
+
+      localStorage.setItem("selectedCheeses", JSON.stringify(chosen));
+      window.location.href = "quiz.html";
+    }
+  </script>
 </body>
 </html>
+
 

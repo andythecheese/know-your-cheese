@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Know Your Cheese – Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .question {
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .cheese-dance {
+      animation: wiggle 0.8s ease;
+    }
+    @keyframes wiggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+    #score-container, #review-container {
+      display: none;
+      margin-top: 30px;
+    }
+    .review-question {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧀 Know Your Cheese – Quiz</h1>
+  <img id="cheese-img" alt="Cheese image" width="300" />
+  <div class="question" id="question">Loading...</div>
+
+  <div id="buttons"></div>
+  <button id="submit-btn" disabled>Submit Answer</button>
+  <button id="next-btn" style="display:none;">Next</button>
+
+  <div id="feedback"></div>
+
+  <div id="score-container">
+    <h2>🎉 Quiz Complete!</h2>
+    <p id="final-score"></p>
+    <button onclick="showReview()">Review Answers</button>
+    <br /><br />
+    <a href="index.html"><button>Back to Start</button></a>
+  </div>
+
+  <div id="review-container">
+    <h2>🧐 Review</h2>
+    <div id="review-content"></div>
+  </div>
+
+  <audio id="correct-sound" src="correct.mp3"></audio>
+  <audio id="wrong-sound" src="wrong.mp3"></audio>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

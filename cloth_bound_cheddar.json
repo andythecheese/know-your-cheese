@@ -1,0 +1,30 @@
+{
+  "image": "cloth_bound_cheddar.png",
+  "questions": [
+    {
+      "question": "What distinguishes cloth-bound cheddar from standard block cheddar?",
+      "options": ["It's made from goat's milk", "It’s aged in wax", "It’s wrapped in cloth and aged in open air", "It's smoked"],
+      "answer": 2
+    },
+    {
+      "question": "What kind of texture is typical of cloth-bound cheddar?",
+      "options": ["Creamy and soft", "Crumbly and firm", "Spreadable", "Rubbery and moist"],
+      "answer": 1
+    },
+    {
+      "question": "Which country is known for reviving the tradition of cloth-bound cheddar?",
+      "options": ["Ireland", "Australia", "United States", "United Kingdom"],
+      "answer": 3
+    },
+    {
+      "question": "Compared to modern cheddar, cloth-bound versions often have:",
+      "options": ["Sweeter notes", "Higher moisture", "Earthier, more complex flavors", "Lower fat content"],
+      "answer": 2
+    },
+    {
+      "question": "Which of these is *not* a typical result of cloth-bound cheddar's aging process?",
+      "options": ["Mold development on the exterior", "Wax-sealed rind", "Rustic, flaky texture", "Deep savory tang"],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "cheeses": [
+    { "file": "mimolette.json", "title": "Mimolette" },
+    { "file": "epoisses.json", "title": "Époisses" },
+    { "file": "cloth_bound_cheddar.json", "title": "Cloth-Bound Cheddar" }
+  ]
+}

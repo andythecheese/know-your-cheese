@@ -1,0 +1,30 @@
+{
+  "image": "epoisses.png",
+  "questions": [
+    {
+      "question": "What is the primary milk used to make Époisses cheese?",
+      "options": ["Cow's milk", "Goat's milk", "Sheep's milk", "Buffalo milk"],
+      "answer": 0
+    },
+    {
+      "question": "What is Époisses washed with during its aging process?",
+      "options": ["Red wine", "Brandy", "Beer", "Cider"],
+      "answer": 1
+    },
+    {
+      "question": "Which region of France is Époisses cheese associated with?",
+      "options": ["Normandy", "Burgundy", "Provence", "Alsace"],
+      "answer": 1
+    },
+    {
+      "question": "What is the texture of Époisses cheese?",
+      "options": ["Hard and crumbly", "Soft and creamy", "Semi-hard", "Firm and elastic"],
+      "answer": 1
+    },
+    {
+      "question": "What is the typical color of Époisses' rind?",
+      "options": ["White", "Orange", "Yellow", "Brown"],
+      "answer": 1
+    }
+  ]
+}
