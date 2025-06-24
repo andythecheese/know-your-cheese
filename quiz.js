@@ -8,6 +8,10 @@ function loadQuiz(filename) {
       questions = data;
       currentQuestionIndex = 0;
       loadQuestion();
+    })
+    .catch(error => {
+      console.error("Error loading quiz:", error);
+      document.getElementById("question").innerText = "Failed to load the quiz.";
     });
 }
 
@@ -38,7 +42,7 @@ function checkAnswer(userIndex) {
   const isCorrect = userIndex === current.answer;
 
   if (isCorrect) {
-    feedback.innerHTML = current.fact;
+    feedback.innerHTML = current.fact || "✅ Correct!";
     correctSound.play();
     cheeseImg.classList.add("cheese-dance");
     setTimeout(() => cheeseImg.classList.remove("cheese-dance"), 800);
@@ -57,7 +61,7 @@ function checkAnswer(userIndex) {
   }, 2000);
 }
 
-// Kick off the quiz with Mimolette by default
+// Start the quiz when the page loads
 window.onload = () => {
   loadQuiz("mimolette.json");
 };
